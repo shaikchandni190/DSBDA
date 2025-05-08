@@ -1,0 +1,51 @@
+TABLEAU
+
+Take Adult Dataset
+
+In Tableau, first take adult_dataset and connect AdultNW1 to it.
+
+Name the Sheet as '1D'
+Age -> Row
+Race-> color
+
+Name the Sheet as '2D'
+Age -> Row
+Occupation -> Column
+Income -> color
+Race -> Label 
+
+Name the Sheet as '3D'
+Age -> Row
+Occupation -> Column
+Marital Status -> Column
+Race -> Color
+
+Name the Sheet as 'Tree'
+Age -> Row
+Occupation -> Column
+Click on Show Me and select Tree Map
+Income -> Label
+
+Name the Sheet as 'Network'
+Line Y -> Row
+Line X -> Column
+Circle Y -> Row
+Right click and set dimnesion(for all 3 above)
+
+In Line Y select Automatic dropdown 'Line'
+Relationship -> Details
+
+In Circle Y
+Node -> Color
+Relationship -> Deatils
+Need to increase Size of  Circle
+Node -> Label
+In Circle Y select Automatic dropdown 'Circle'
+Need to increase Size of  Circle
+Select Dual axis for Circle Y
+
+Click on Dashboard
+Drag and Drop Files
+Select Floating and then drop
+Apply height and width as per your need
+Now drag and drop each 1D, 2D, 3D, Tree, Network

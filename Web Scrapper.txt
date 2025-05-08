@@ -1,0 +1,20 @@
+import requests
+import bs4
+
+var1=requests.get('https://www.flipkart.com/boat-rockerz-235-pro-upto-20-hours-playback-asap-charge-bluetooth/p/itm6227968b63650?pid=ACCGBVMG5N6P7TEK&lid=LSTACCGBVMG5N6P7TEKD0XNHO&marketplace=FLIPKART&q=boAt+Rockerz+235v2%2F238+with+ASAP+Change+an+upto+8+Hours+Playback+Bluetooth+Headset+%28Charcoal+Black%2C+In+the+Ear%29&store=0pm%2Ffcn%2F821%2Fa7x&srno=s_1_2&otracker=search&otracker1=search&fm=Search&iid=en_T-9W10SFHxu4ylbiJ_752D_LbE5kDAAjxL-xY-1axV8k6MJ7Bd36LlNIPXFKG6gdaTZEvKozkwLXXf_dvMzfuQ%3D%3D&ppt=sp&ppn=sp&ssid=2yfsz3f4j40000001746637299239&qH=77b08f6d56bc6806')
+var1
+
+var1.content
+
+var2=bs4.BeautifulSoup(var1.text)
+
+o_rating=var2.find('div',{'class':'ipqd2A'}).get_text()
+o_rating
+
+i_rating=var2.find_all('div',{'class':'XQDdHH Ga3i8K'})
+for irating in i_rating:
+    print(irating.get_text()+'\n')
+
+reviews=var2.find_all('div',{'class':'ZmyHeo'})
+for rv in reviews:
+    print(rv.get_text()+'\n')

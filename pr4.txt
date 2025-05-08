@@ -1,0 +1,57 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the heart disease dataset
+heart_df = pd.read_csv("Desktop/heart.csv")
+
+# Set a consistent style
+sns.set(style="whitegrid")
+
+# 1. Count of Heart Disease Cases
+plt.figure(figsize=(6, 4))
+sns.countplot(x='target', data=heart_df, palette='Set2')
+plt.title('Heart Disease Count (0 = No, 1 = Yes)')
+plt.xlabel('Heart Disease')
+plt.ylabel('Count')
+plt.show()
+
+# 2. Age vs. Cholesterol colored by Heart Disease
+plt.figure(figsize=(8, 6))
+sns.scatterplot(data=heart_df, x='age', y='chol', hue='target', palette='Set1')
+plt.title('Age vs Cholesterol by Heart Disease')
+plt.xlabel('Age')
+plt.ylabel('Cholesterol')
+plt.show()
+
+# 3. Heatmap of Correlations
+plt.figure(figsize=(12, 8))
+sns.heatmap(heart_df.corr(), annot=True, cmap='coolwarm', fmt='.2f')
+plt.title('Correlation Heatmap - Heart Disease Dataset')
+plt.show()
+
+# 4. Distribution of Maximum Heart Rate (thalach)
+plt.figure(figsize=(7, 5))
+sns.histplot(heart_df['thalach'], kde=True, bins=30, color='skyblue')
+plt.title('Distribution of Maximum Heart Rate')
+plt.xlabel('Maximum Heart Rate Achieved (thalach)')
+plt.show()
+
+
+# 5. Chest Pain Type vs Heart Disease
+plt.figure(figsize=(7, 5))
+sns.countplot(data=heart_df, x='cp', hue='target', palette='pastel')
+plt.title('Chest Pain Type vs Heart Disease')
+plt.xlabel('Chest Pain Type (cp)')
+plt.ylabel('Count')
+plt.legend(title='Heart Disease')
+plt.show()
+
+
+# 6. Boxplot: Cholesterol by Target
+plt.figure(figsize=(7, 5))
+sns.boxplot(x='target', y='chol', data=heart_df, palette='Set3')
+plt.title('Cholesterol Levels by Heart Disease')
+plt.xlabel('Heart Disease (0 = No, 1 = Yes)')
+plt.ylabel('Cholesterol')
+plt.show()
